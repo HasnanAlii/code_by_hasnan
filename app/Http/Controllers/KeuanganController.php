@@ -88,8 +88,11 @@ class KeuanganController extends Controller
             'saldo_akhir'    => $saldoAkhir,
         ]);
 
-        return redirect()->route('keuangan.index')
-            ->with('success', 'Data keuangan berhasil ditambahkan');
+        return redirect()->route('keuangan.index')->with([
+            'message' => 'Data keuangan berhasil ditambahkan',
+            'alert-type' => 'success'
+        ]);
+
     }
 
 
@@ -143,8 +146,10 @@ class KeuanganController extends Controller
                 $row->save();
             });
 
-        return redirect()->route('keuangan.index')
-            ->with('success', 'Data keuangan berhasil diperbarui');
+        return redirect()->route('keuangan.index')->with([
+            'message' => 'Data keuangan berhasil diperbarui',
+            'alert-type' => 'success'
+        ]);
     }
 
 
@@ -152,8 +157,10 @@ class KeuanganController extends Controller
     {
         $keuangan->delete();
 
-        return redirect()->route('keuangan.index')
-            ->with('success', 'Data keuangan berhasil dihapus');
+        return redirect()->route('keuangan.index')->with([
+            'message' => 'Data keuangan berhasil dihapus',
+            'alert-type' => 'success'
+        ]);
     }
 
     public function exportPdf(Request $request)

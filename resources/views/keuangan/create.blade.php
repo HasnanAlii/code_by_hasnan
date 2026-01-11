@@ -15,7 +15,7 @@
         </div>
     </x-slot>
 
-    <div class="py-12 bg-gray-50 min-h-screen">
+    <div class="py-12 bg-gray-50 min-h-screen px-5">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             
             <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-blue-100">
@@ -47,7 +47,6 @@
                         <div class="space-y-8">
                             
                             {{-- 1. JENIS TRANSAKSI --}}
-                         {{-- 1. JENIS TRANSAKSI --}}
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
                                     <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span>
@@ -58,6 +57,7 @@
                                     {{-- Radio Pemasukan --}}
                                     <label class="cursor-pointer group">
                                         <input type="radio" name="jenis" value="masuk" class="peer sr-only" required>
+                                        {{-- Container uses border-2, so 'border' isn't needed here --}}
                                         <div class="p-4 rounded-xl border-2 border-gray-200 hover:border-green-300
                                                     peer-checked:border-green-500 peer-checked:bg-green-50 transition-all flex items-center gap-3">
                                             <div class="p-2 bg-green-100 text-green-600 rounded-lg peer-checked:bg-green-500 peer-checked:text-white">
@@ -112,11 +112,13 @@
                                     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
                                         <span class="text-gray-500 font-bold">Rp</span>
                                     </div>
-                                 <input type="text" id="jumlah_display"
-                                    class="pl-12 block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 font-bold text-gray-800 text-lg transition"
-                                    placeholder="0" required>
+                                    
+                                    {{-- ADDED 'border' CLASS HERE --}}
+                                    <input type="text" id="jumlah_display"
+                                        class="pl-12 block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 font-bold text-gray-800 text-lg transition"
+                                        placeholder="0" required>
 
-                                 <input type="hidden" name="jumlah" id="jumlah">
+                                    <input type="hidden" name="jumlah" id="jumlah">
 
                                 </div>
                                 @error('jumlah')
@@ -130,8 +132,10 @@
                                     <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span>
                                     Keterangan
                                 </label>
+                                
+                                {{-- ADDED 'border' CLASS HERE --}}
                                 <textarea name="keterangan" id="keterangan" rows="3" 
-                                          class="block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
+                                          class="block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
                                           placeholder="Masukan keterangan">{{ old('keterangan') }}</textarea>
                                 @error('keterangan')
                                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -164,31 +168,29 @@
         </div>
     </div>
     <script>
-document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
+            const displayInput = document.getElementById("jumlah_display");
+            const realInput = document.getElementById("jumlah");
 
-    const displayInput = document.getElementById("jumlah_display");
-    const realInput = document.getElementById("jumlah");
+            function formatRupiah(angka) {
+                return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
 
-    function formatRupiah(angka) {
-        return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
+            displayInput.addEventListener("input", function () {
+                let value = this.value.replace(/\D/g, ""); // hapus semua selain angka
 
-    displayInput.addEventListener("input", function () {
-        let value = this.value.replace(/\D/g, ""); // hapus semua selain angka
+                if (value === "") {
+                    realInput.value = "";
+                    this.value = "";
+                    return;
+                }
 
-        if (value === "") {
-            realInput.value = "";
-            this.value = "";
-            return;
-        }
+                // set ke input hidden (angka asli)
+                realInput.value = value;
 
-        // set ke input hidden (angka asli)
-        realInput.value = value;
-
-        // tampilkan dalam format ribuan
-        this.value = formatRupiah(value);
-    });
-});
-</script>
-
+                // tampilkan dalam format ribuan
+                this.value = formatRupiah(value);
+            });
+        });
+    </script>
 </x-app-layout>

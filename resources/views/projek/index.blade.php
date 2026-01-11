@@ -13,8 +13,8 @@
         </div>
     </x-slot>
 
-    <div class="py-8 bg-slate-50 min-h-screen px-10">
-        <div class="mx-auto sm:px-6 lg:px-8 space-y-8">
+    <div class="py-6 md:py-12 bg-slate-50 min-h-screen px-4 md:px-5">
+        <div class="mx-auto sm:px-6 lg:px-8 space-y-6 md:space-y-8">
 
             {{-- ACTION BAR --}}
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -45,7 +45,7 @@
                 </form>
 
                 <a href="{{ route('projek.create') }}"
-                   class="group inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white text-sm font-bold rounded-2xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:shadow-blue-600/40 transition-all duration-300 transform hover:-translate-y-0.5">
+                   class="group inline-flex items-center gap-2 px-6 py-2 bg-blue-600 text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:shadow-blue-600/40 transition-all duration-300 transform hover:-translate-y-0.5">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          class="h-5 w-5 transition-transform group-hover:rotate-90"
                          viewBox="0 0 20 20"
@@ -134,18 +134,14 @@
                                 </p>
                             </div>
 
-                            <div class="space-y-3 pt-4 border-t border-slate-100">
+                             <div class="space-y-3 pt-4 border-t border-slate-100">
+                                {{-- ITEM 1: KLIEN --}}
                                 <div class="flex items-center gap-3">
                                     <div class="p-2 bg-slate-50 text-slate-500 rounded-lg">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             class="h-4 w-4"
-                                             fill="none"
-                                             viewBox="0 0 24 24"
-                                             stroke="currentColor">
-                                            <path stroke-linecap="round"
-                                                  stroke-linejoin="round"
-                                                  stroke-width="2"
-                                                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                        {{-- Icon User --}}
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                         </svg>
                                     </div>
                                     <div>
@@ -156,17 +152,14 @@
                                     </div>
                                 </div>
 
+                                {{-- ITEM 2: DEADLINE --}}
                                 <div class="flex items-center gap-3">
-                                    <div class="p-2 bg-slate-50 rounded-lg">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             class="h-4 w-4"
-                                             fill="none"
-                                             viewBox="0 0 24 24"
-                                             stroke="currentColor">
-                                            <path stroke-linecap="round"
-                                                  stroke-linejoin="round"
-                                                  stroke-width="2"
-                                                  d="M8 7V3m8 4V3m-9 8h10" />
+                                    {{-- Added text-slate-500 for consistency --}}
+                                    <div class="p-2 bg-slate-50 text-slate-500 rounded-lg">
+                                        {{-- Icon Calendar --}}
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                         </svg>
                                     </div>
                                     <div>

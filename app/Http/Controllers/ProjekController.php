@@ -45,8 +45,11 @@ class ProjekController extends Controller
 
 
 
-        return redirect()->route('projek.index')
-            ->with('success', 'Projek berhasil ditambahkan');
+    return redirect()->route('projek.index')->with([
+        'message' => 'Projek berhasil ditambahkan',
+        'alert-type' => 'success'
+    ]);
+
     }
 
 
@@ -83,15 +86,20 @@ class ProjekController extends Controller
         ]);
         }
 
-        return redirect()->route('projek.index')
-            ->with('success', 'Projek berhasil diperbarui');
+    return redirect()->route('projek.index')->with([
+        'message' => 'Projek berhasil diperbarui',
+        'alert-type' => 'success'
+    ]);
+
     }
 
     public function destroy(Projek $projek)
     {
         $projek->delete();
 
-        return redirect()->route('projek.index')
-            ->with('success', 'Projek berhasil dihapus');
+    return redirect()->route('projek.index')->with([
+        'message' => 'Projek berhasil dihapus',
+        'alert-type' => 'success'
+    ]);
     }
 }

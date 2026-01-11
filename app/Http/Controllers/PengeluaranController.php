@@ -68,8 +68,11 @@ class PengeluaranController extends Controller
             'saldo_akhir' => Keuangan::latest('id')->value('saldo_akhir') - $request->jumlah,
         ]);
 
-        return redirect()->route('pengeluaran.index')
-            ->with('success', 'Pengeluaran berhasil ditambahkan');
+        return redirect()->route('pengeluaran.index')->with([
+            'message' => 'Pengeluaran berhasil disimpan',
+            'alert-type' => 'success'
+        ]);
+
     }
 
     public function edit(Pengeluaran $pengeluaran)
@@ -92,16 +95,22 @@ class PengeluaranController extends Controller
             'saldo_akhir' => Keuangan::latest('id')->value('saldo_akhir') - $request->jumlah,
         ]);
 
-        return redirect()->route('pengeluaran.index')
-            ->with('success', 'Pengeluaran berhasil diperbarui');
+        return redirect()->route('pengeluaran.index')->with([
+            'message' => 'Pengeluaran berhasil diperbarui',
+            'alert-type' => 'success'
+        ]);
+
     }
 
     public function destroy(Pengeluaran $pengeluaran)
     {
         $pengeluaran->delete();
 
-        return redirect()->route('pengeluaran.index')
-            ->with('success', 'Pengeluaran berhasil dihapus');
+        return redirect()->route('pengeluaran.index')->with([
+            'message' => 'Pengeluaran berhasil dihapus',
+            'alert-type' => 'success'
+        ]);
+
     }
 
 

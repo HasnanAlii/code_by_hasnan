@@ -247,7 +247,7 @@
             </tr>
             <tr class="total-row">
                 <td>Saldo Akhir</td>
-                <td class="text-right">Rp {{ number_format($totalMasuk - $totalKeluar, 0, ',', '.') }}</td>
+                <td class="text-right">Rp {{ number_format($item->saldo_akhir, 0, ',', '.') }}</td>
             </tr>
         </table>
     </div>

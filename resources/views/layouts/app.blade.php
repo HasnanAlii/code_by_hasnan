@@ -15,6 +15,10 @@
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    
+    {{-- SweetAlert2 --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     {{-- Vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -74,57 +78,88 @@
     </main>
 </div>
 
-{{-- CLEANUP MODAL --}}
-<div id="cleanupModal"
-     class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+    {{-- CLEANUP MODAL --}}
+    <div id="cleanupModal"
+        class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
 
-        <div class="flex items-center justify-center w-14 h-14 rounded-full bg-rose-100 text-rose-600 mx-auto mb-4">
-            <i data-feather="x" class="w-7 h-7"></i>
-        </div>
+            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-rose-100 text-rose-600 mx-auto mb-4">
+                <i data-feather="x" class="w-7 h-7"></i>
+            </div>
 
-        <h3 class="text-lg font-bold text-slate-800 text-center">
-            Konfirmasi Penghapusan
-        </h3>
-        <p class="text-sm text-slate-500 text-center mt-2">
-            Semua data <b>lebih dari 5 bulan</b> akan dihapus permanen.<br>
-            <span class="text-rose-600 font-semibold">Aksi ini tidak bisa dibatalkan.</span>
-        </p>
+            <h3 class="text-lg font-bold text-slate-800 text-center">
+                Konfirmasi Penghapusan
+            </h3>
+            <p class="text-sm text-slate-500 text-center mt-2">
+                Semua data <b>lebih dari 5 bulan</b> akan dihapus permanen.<br>
+                <span class="text-rose-600 font-semibold">Aksi ini tidak bisa dibatalkan.</span>
+            </p>
 
-        <div class="flex justify-center gap-3 mt-6">
-            <button onclick="closeCleanupModal()"
-                class="px-4 py-2 text-sm font-bold rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200">
-                Batal
-            </button>
-
-            <form action="{{ route('dashboard.cleanup') }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit"
-                    class="px-5 py-2 text-sm font-bold rounded-xl bg-rose-600 text-white hover:bg-rose-700 shadow">
-                    Ya, Hapus
+            <div class="flex justify-center gap-3 mt-6">
+                <button onclick="closeCleanupModal()"
+                    class="px-4 py-2 text-sm font-bold rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200">
+                    Batal
                 </button>
-            </form>
+
+                <form action="{{ route('dashboard.cleanup') }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"
+                        class="px-5 py-2 text-sm font-bold rounded-xl bg-rose-600 text-white hover:bg-rose-700 shadow">
+                        Ya, Hapus
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-{{-- SCRIPTS --}}
-<script src="https://unpkg.com/alpinejs" defer></script>
-<script src="https://unpkg.com/feather-icons"></script>
+    {{-- SCRIPTS --}}
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        function openCleanupModal() {
+            document.getElementById('cleanupModal').classList.remove('hidden');
+        }
+        function closeCleanupModal() {
+            document.getElementById('cleanupModal').classList.add('hidden');
+        }
 
-<script>
-    function openCleanupModal() {
-        document.getElementById('cleanupModal').classList.remove('hidden');
-    }
-    function closeCleanupModal() {
-        document.getElementById('cleanupModal').classList.add('hidden');
-    }
+        document.addEventListener("DOMContentLoaded", () => {
+            feather.replace();
+        });
+    </script>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true
+        });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        feather.replace();
-    });
-</script>
+        @if(Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}";
+            switch(type){
+                case 'info':
+                    Toast.fire({ icon: 'info', title: "{{ Session::get('message') }}" }); break;
+                case 'success':
+                    Toast.fire({ icon: 'success', title: "{{ Session::get('message') }}" }); break;
+                case 'warning':
+                    Toast.fire({ icon: 'warning', title: "{{ Session::get('message') }}" }); break;
+                case 'error':
+                    Toast.fire({ icon: 'error', title: "{{ Session::get('message') }}" }); break;
+            }
+        @endif
+
+        @if ($errors->any())
+            let errors = `<ul class="swal-error-list">`;
+            @foreach ($errors->all() as $error)
+                errors += `<li>{{ $error }}</li>`;
+            @endforeach
+            errors += `</ul>`;
+            Swal.fire({ icon: 'error', title: "Terjadi Kesalahan", html: errors });
+        @endif
+    </script>
 
 </body>
 </html>

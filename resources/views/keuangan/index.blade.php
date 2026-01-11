@@ -12,7 +12,7 @@
         </div>
     </x-slot>
 
-    <div class="py-12 bg-slate-50 min-h-screen px-10">
+    <div class="py-12 bg-slate-50 min-h-screen px-5">
         <div class="mx-auto sm:px-6 lg:px-8 space-y-8">
 
             {{-- SUMMARY --}}
@@ -89,14 +89,17 @@
             
 
             {{-- TABLE --}}
-            <div class="bg-white rounded-3xl shadow-xl border overflow-hidden">
-                <div class="px-8 py-6 border-b flex justify-between items-center">
-                    <div>
-                        <h3 class="font-bold text-xl text-slate-800">Riwayat Transaksi</h3>
-                        <p class="text-sm text-slate-500">Data pemasukan dan pengeluaran</p>
-                        
+          <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100">
+                <div class="px-4 md:px-6 py-4 md:py-5 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 md:gap-4 bg-white">
+                      <div class="flex items-center gap-3">
+                        <div class="p-2 bg-green-100 text-green-600 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-700 text-lg">Riwayat Transaksi</h3>
                     </div>
-                    <div class="flex items-center gap-4 flex-wrap">                                
+                     <div class="flex items-center gap-4 flex-wrap">                                
                             @php
                                 $filters = [
                                     'harian' => 'Harian',
@@ -195,26 +198,22 @@
 
                                 })();
                             </script>
+
                                 <a href="{{ route('keuangan.export.pdf', request()->query()) }}" target="_blank"
-                                class="group flex items-center justify-center gap-2 w-full md:w-auto px-5 py-2.5 bg-rose-600 text-white text-sm font-bold rounded-xl shadow-lg shadow-rose-500/30 hover:bg-rose-700 hover:shadow-rose-600/40 transition-all duration-300 transform hover:-translate-y-0.5">
-                                    
-                                    {{-- Icon PDF / Download --}}
+                                    class="group flex items-center justify-center gap-2 w-full md:w-auto px-5 py-2.5 bg-rose-600 text-white text-sm font-bold rounded-xl shadow-lg shadow-rose-500/30 hover:bg-rose-700 hover:shadow-rose-600/40 transition-all duration-300 transform hover:-translate-y-0.5">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                     </svg>
-                                    
                                     <span>Export PDF</span>
                                 </a>
-                                <a href="{{ route('keuangan.create') }}"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl shadow">
-                                    {{-- SVG --}}
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
+                                <a href="{{ route('keuangan.create') }}" 
+                                    class="group flex items-center justify-center gap-2 w-full md:w-auto px-5 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:shadow-blue-600/40 transition-all duration-300 transform hover:-translate-y-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
                                     </svg>
-                                    Tambah
+                                    Catat Keuangan
                                 </a>
+                                
                     </div>
                 </div>
 
@@ -238,9 +237,17 @@
                                         {{ $loop->iteration }}
                                     </td>
 
-                                    <td class="px-6 py-4 text-center text-sm">
-                                        {{ $keuangan->created_at->format('d/m/Y') }}
+
+                                    <td class="px-6 py-4 item-center justify-center text-gray-600 whitespace-nowrap">
+                                        <div class="flex items-center gap-2 item-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                            {{-- Asumsi kolom database bernama 'tanggal' atau 'created_at' --}}
+                                            {{ \Carbon\Carbon::parse($keuangan->created_at)->translatedFormat('d M Y') }}
+                                        </div>
                                     </td>
+
 
                                     <td class="px-6 py-4 text-center">
                                         @if($keuangan->jenis === 'masuk')

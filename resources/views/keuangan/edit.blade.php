@@ -15,7 +15,7 @@
         </div>
     </x-slot>
     
-    <div class="py-12 bg-gray-50 min-h-screen">
+    <div class="py-12 bg-gray-50 min-h-screen px-5">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
 
             <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-blue-100">
@@ -23,15 +23,20 @@
                 {{-- FORM HEADER --}}
                 <div class="px-6 py-4 bg-gray-50 border-b border-gray-100 flex justify-between items-center">
                     <span class="text-gray-600 font-medium flex items-center gap-2">
-                        <div class="p-2 bg-blue-100 rounded-lg text-blue-600">
-                            <i data-feather="edit" class="h-5 w-5"></i>
+                        <div class="p-2 bg-amber-100 rounded-lg text-amber-600">
+                            {{-- Icon Edit --}}
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                            </svg>
                         </div>
-                        Form Edit Transaksi Keuangan
+                        Edit Data Transaksi
                     </span>
 
                     <a href="{{ route('keuangan.index') }}"
-                       class="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1 font-bold">
-                        <i data-feather="arrow-left" class="h-4 w-4"></i>
+                       class="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1 font-bold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                        </svg>
                         Kembali
                     </a>
                 </div>
@@ -53,7 +58,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                                     {{-- PEMASUKAN --}}
-                                    <label class="cursor-pointer">
+                                    <label class="cursor-pointer group">
                                         <input type="radio"
                                                name="jenis"
                                                value="masuk"
@@ -81,7 +86,7 @@
                                     </label>
 
                                     {{-- PENGELUARAN --}}
-                                    <label class="cursor-pointer">
+                                    <label class="cursor-pointer group">
                                         <input type="radio"
                                                name="jenis"
                                                value="keluar"
@@ -127,9 +132,10 @@
                                         <span class="text-gray-500 font-bold">Rp</span>
                                     </div>
 
+                                    {{-- ADDED 'border' CLASS HERE --}}
                                     <input type="text"
                                            id="jumlah_display"
-                                           class="pl-12 block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 font-bold text-lg"
+                                           class="pl-12 block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 font-bold text-lg transition"
                                            value="{{ number_format($keuangan->jumlah, 0, ',', '.') }}"
                                            required>
 
@@ -151,9 +157,10 @@
                                     Keterangan
                                 </label>
 
+                                {{-- ADDED 'border' CLASS HERE --}}
                                 <textarea name="keterangan"
                                           rows="3"
-                                          class="block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
+                                          class="block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
                                           placeholder="Masukan keterangan">{{ old('keterangan', $keuangan->keterangan) }}</textarea>
 
                                 @error('keterangan')
@@ -164,7 +171,7 @@
                             {{-- ACTION --}}
                             <div class="flex justify-end gap-3 pt-6 border-t border-gray-100">
                                 <a href="{{ route('keuangan.index') }}"
-                                   class="px-5 py-2.5 bg-gray-200 text-gray-700 font-semibold rounded-xl hover:bg-gray-300 transition">
+                                   class="px-5 py-2.5 bg-gray-200 text-gray-700 font-semibold rounded-xl hover:bg-gray-300 transition duration-300">
                                     Batal
                                 </a>
 
@@ -172,7 +179,9 @@
                                         class="px-6 py-2.5 bg-blue-600 text-white font-bold rounded-xl shadow-lg
                                                hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-0.5
                                                flex items-center gap-2">
-                                    <i data-feather="save" class="w-5 h-5"></i>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                                    </svg>
                                     Update Transaksi
                                 </button>
                             </div>
@@ -187,17 +196,26 @@
 
     {{-- FORMAT RUPIAH --}}
     <script>
-        const display = document.getElementById('jumlah_display');
-        const hidden  = document.getElementById('jumlah');
+        document.addEventListener("DOMContentLoaded", function () {
+            const display = document.getElementById('jumlah_display');
+            const hidden  = document.getElementById('jumlah');
 
-        function formatRupiah(val) {
-            return val.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        }
+            function formatRupiah(val) {
+                return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
 
-        display.addEventListener('input', () => {
-            let raw = display.value.replace(/\D/g, '');
-            hidden.value = raw;
-            display.value = formatRupiah(raw);
+            display.addEventListener('input', () => {
+                let raw = display.value.replace(/\D/g, '');
+                
+                if (raw === "") {
+                    hidden.value = "";
+                    display.value = "";
+                    return;
+                }
+
+                hidden.value = raw;
+                display.value = formatRupiah(raw);
+            });
         });
     </script>
 </x-app-layout>

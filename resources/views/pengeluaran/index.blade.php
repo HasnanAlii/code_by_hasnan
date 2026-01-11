@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-            <h2 class="font-extrabold text-2xl text-gray-800 leading-tight tracking-tight">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-4">
+            <h2 class="font-extrabold text-xl md:text-2xl text-gray-800 leading-tight tracking-tight">
                 Manajemen Pengeluaran
             </h2>
 
-            <nav class="flex text-sm font-medium text-gray-500">
+            <nav class="flex text-xs md:text-sm font-medium text-gray-500">
                 <span class="hover:text-blue-600 transition">Dashboard</span>
                 <span class="mx-2">/</span>
                 <span class="text-blue-600">Pengeluaran</span>
@@ -13,40 +13,39 @@
         </div>
     </x-slot>
 
-    <div class="py-12 bg-slate-50 min-h-screen px-10">
-        <div class="mx-auto sm:px-6 lg:px-8 space-y-8">
+    <div class="py-6 md:py-12 bg-slate-50 min-h-screen px-4 md:px-5">
+        <div class="mx-auto sm:px-6 lg:px-8 space-y-6 md:space-y-8">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
         <div class="hidden md:block"></div>
-        {{-- CARD JUMLAH TRANSAKSI --}}
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+
+        <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3 md:gap-4">
             <div class="p-3 bg-blue-50 text-blue-600 rounded-xl">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8"
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8"
                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 17v-2a4 4 0 014-4h4m-6 6h6m-6 4h6M7 7h10M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                 </svg>
             </div>
             <div>
-                <p class="text-sm text-gray-500 font-medium">Jumlah Pengeluaran</p>
-                <h3 class="text-2xl font-bold text-gray-800">
+                <p class="text-xs md:text-sm text-gray-500 font-medium">Jumlah Pengeluaran</p>
+                <h3 class="text-lg md:text-2xl font-bold text-gray-800">
                     {{ $jumlahPengeluaran }} Pengeluaran
                 </h3>
             </div>
         </div>
 
-        {{-- CARD TOTAL PENGELUARAN --}}
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-red-100 flex items-center gap-4">
+        <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-red-100 flex items-center gap-3 md:gap-4">
             <div class="p-3 bg-red-50 text-red-600 rounded-xl">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8"
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8"
                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
                 </svg>
             </div>
             <div>
-                <p class="text-sm text-gray-500 font-medium">Total Pengeluaran</p>
-                <h3 class="text-2xl font-bold text-gray-800">
+                <p class="text-xs md:text-sm text-gray-500 font-medium">Total Pengeluaran</p>
+                <h3 class="text-lg md:text-2xl font-bold text-gray-800">
                     Rp {{ number_format($totalPengeluaran, 0, ',', '.') }}
                 </h3>
             </div>
@@ -54,15 +53,15 @@
     </div>
 
             <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100">
-                {{-- Header Tabel & Tombol Tambah --}}
-                <div class="px-6 py-5 border-b border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 bg-white">
+                <div class="px-4 md:px-6 py-4 md:py-5 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 md:gap-4 bg-white">
+
                     <div class="flex items-center gap-3">
                         <div class="p-2 bg-red-100 text-red-600 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                        <h3 class="font-bold text-gray-700 text-lg">Riwayat Transaksi</h3>
+                        <h3 class="font-bold text-gray-700 text-lg">Riwayat Pengeluaran</h3>
                     </div>
                              <div class="flex items-center gap-4 flex-wrap">                                
                             @php
@@ -172,12 +171,13 @@
                                     <span>Export PDF</span>
                                 </a>
                                 <a href="{{ route('pengeluaran.create') }}" 
-                                   class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5">
+                                    class="group flex items-center justify-center gap-2 w-full md:w-auto px-5 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:shadow-blue-600/40 transition-all duration-300 transform hover:-translate-y-0.5">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
                                     </svg>
                                     Catat Pengeluaran
                                 </a>
+                                
                     </div>
                 </div>
                      
@@ -186,8 +186,8 @@
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="bg-gray-50 text-gray-500 uppercase text-xs font-bold tracking-wider">
-                                <th class="px-6 py-4">No</th>
-                                <th class="px-6 py-4">Tanggal</th>
+                                <th class="px-6 py-4 text-center">No</th>
+                                <th class="px-6 py-4 text-center">Tanggal</th>
                                 <th class="px-6 py-4">Keterangan</th>
                                 <th class="px-6 py-4 text-right">Jumlah (Rp)</th>
                                 <th class="px-6 py-4 text-center">Aksi</th>
@@ -197,18 +197,18 @@
                             @forelse($pengeluaran as $index => $item)
                                 <tr class="hover:bg-gray-50 transition duration-150">
                                     {{-- Nomor Urut --}}
-                                    <td class="px-6 py-4 text-gray-500 font-medium">
+                                    <td class="px-6 py-4 text-gray-500 font-medium text-center">
                                         {{ $loop->iteration }}
                                     </td>
                                     
                                     {{-- Tanggal (Format: 09 Jan 2026) --}}
                                     <td class="px-6 py-4 text-gray-600 whitespace-nowrap">
-                                        <div class="flex items-center gap-2">
+                                        <div class="flex items-center gap-2 item-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                             </svg>
                                             {{-- Asumsi kolom database bernama 'tanggal' atau 'created_at' --}}
-                                            {{ \Carbon\Carbon::parse($item->updated_at)->translatedFormat('d M Y') }}
+                                            {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d M Y') }}
                                         </div>
                                     </td>
 
@@ -217,11 +217,10 @@
                                         {{ $item->keterangan }}
                                     </td>
 
-                                    {{-- Jumlah (Format Merah) --}}
-                                    <td class="px-6 py-4 text-right">
-                                        <span class="inline-block px-3 py-1 bg-red-50 text-red-600 rounded-full font-bold text-sm border border-red-100">
-                                            - Rp {{ number_format($item->jumlah, 0, ',', '.') }}
-                                        </span>
+                                 
+                                     <td class="px-6 py-4 text-right font-bold font-mono
+                                        {{ $item->jenis === 'masuk' ? 'text-emerald-600' : 'text-rose-600' }}">
+                                        Rp {{ number_format($item->jumlah, 0, ',', '.') }}
                                     </td>
 
                                     {{-- Aksi --}}

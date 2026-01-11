@@ -68,8 +68,12 @@ public function cleanupOldData()
             ->delete();
     });
 
+
     return redirect()
         ->route('dashboard')
-        ->with('success', 'Data lama (>5 bulan) berhasil dibersihkan.');
+        ->with([
+            'message' => 'Data lebih dari 5 bulan berhasil dibersihkan.',
+            'alert-type' => 'success'
+        ]);
 }
 }

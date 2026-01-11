@@ -82,8 +82,8 @@
             </form>
         </div>
     </x-slot>
-
-    <div class="py-12 bg-slate-50 min-h-screen px-10">
+        
+    <div class="py-12 bg-slate-50 min-h-screen px-5">
         <div class="mx-auto sm:px-6 lg:px-8 space-y-8">
             <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 p-8 relative overflow-hidden">
                 <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">

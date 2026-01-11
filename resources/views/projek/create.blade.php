@@ -15,8 +15,8 @@
         </div>
     </x-slot>
 
-    <div class="py-12 bg-gray-50 min-h-screen">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-12 bg-gray-50 min-h-screen px-5">
+        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             
             <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-blue-100">
 
@@ -57,8 +57,9 @@
                                     {{-- Nama Projek --}}
                                     <div>
                                         <label for="nama" class="block text-xs font-semibold text-gray-500 mb-1 uppercase">Nama Projek *</label>
+                                        {{-- ADDED 'border' CLASS HERE --}}
                                         <input type="text" name="nama" id="nama" required value="{{ old('nama') }}"
-                                               class="block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
+                                               class="block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
                                                placeholder="Masukan nama projek">
                                         @error('nama') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
                                     </div>
@@ -66,8 +67,9 @@
                                     {{-- Jenis Projek --}}
                                     <div>
                                         <label for="jenis" class="block text-xs font-semibold text-gray-500 mb-1 uppercase">Jenis / Kategori *</label>
+                                        {{-- ADDED 'border' CLASS HERE --}}
                                         <input type="text" name="jenis" id="jenis" required value="{{ old('jenis') }}"
-                                               class="block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
+                                               class="block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
                                                placeholder="Masukan jenis projek">
                                         @error('jenis') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
                                     </div>
@@ -92,8 +94,9 @@
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                                 </svg>
                                             </div>
+                                            {{-- ADDED 'border' CLASS HERE --}}
                                             <input type="text" name="nama_customer" id="nama_customer" required value="{{ old('nama_customer') }}"
-                                                   class="pl-10 block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 transition"
+                                                   class="pl-10 block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 transition"
                                                    placeholder="Nama Perusahaan / Perorangan">
                                         </div>
                                         @error('nama_customer') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
@@ -102,8 +105,9 @@
                                     {{-- Deadline --}}
                                     <div>
                                         <label for="deadline" class="block text-xs font-semibold text-gray-500 mb-1 uppercase">Tenggat Waktu (Deadline) *</label>
+                                        {{-- ADDED 'border' CLASS HERE --}}
                                         <input type="date" name="deadline" id="deadline" required value="{{ old('deadline') }}"
-                                               class="block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition text-gray-600">
+                                               class="block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition text-gray-600">
                                         @error('deadline') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
                                     </div>
                                 </div>
@@ -122,8 +126,9 @@
                                         <span class="text-gray-500 font-bold">Rp</span>
                                     </div>
                                     {{-- Input Display (Format Rupiah) --}}
+                                    {{-- ADDED 'border' CLASS HERE --}}
                                     <input type="text" id="harga_display"
-                                           class="pl-12 block w-full border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 font-bold text-gray-800 text-lg transition"
+                                           class="pl-12 block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 font-bold text-gray-800 text-lg transition"
                                            placeholder="0" required>
                                     
                                     {{-- Input Hidden (Nilai Asli) --}}
@@ -167,8 +172,6 @@
                                             <span class="block font-bold text-sm text-gray-700 peer-checked:text-blue-700">On Progress</span>
                                         </div>
                                     </label>
-
-                                
                                 </div>
                                 @error('status') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
                             </div>
