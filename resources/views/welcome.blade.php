@@ -80,12 +80,12 @@
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Tentang</a>
                     <a href="#layanan" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Layanan</a>
-                    <a href="#skill" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Profil</a>
+                    <a href="#kontak" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Kontak</a>
                 </div>
 
                 {{-- CTA Button --}}
                 <div class="hidden md:flex items-center gap-3">
-                <a href="https://wa.me/62812xxxxxx" class="px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">Konsultasi</a>
+                <a href="#kontak" class="px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">Konsultasi</a>
                 </div>
 
                 {{-- Mobile Menu Button --}}
@@ -96,11 +96,12 @@
         </div>
 
         {{-- Mobile Dropdown --}}
-        <div x-show="open" @click.outside="open = false" x-transition class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl p-4 flex flex-col gap-4">
+        <div x-show="open" @click.outside="open = false" x-transition 
+        class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl p-4 flex flex-col gap-4">
             <a href="#about" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Tentang</a>
             <a href="#layanan" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Layanan</a>
+            <a href="#kontak" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Kontak</a>
             <hr class="border-slate-100">
-        
         </div>
     </nav>
 
@@ -157,14 +158,12 @@
         </div>
     </section>
 
-    {{-- ================= TECH STACK MARQUEE ================= --}}
-{{-- ================= TECH STACK MARQUEE ================= --}}
     <section id="skill" class="py-10 border-y border-slate-100 bg-white/50 backdrop-blur-sm overflow-hidden">
         <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Teknologi yang Saya Gunakan</p>
         
         <div class="relative w-full overflow-hidden">
             {{-- Durasi diperlambat ke 35s karena item lebih banyak --}}
-            <div class="flex whitespace-nowrap animate-scroll gap-16 items-center" style="animation-duration: 35s;">
+            <div class="flex whitespace-nowrap animate-scroll gap-16 items-center" style="animation-duration: 25s;">
                 {{-- Loop digandakan agar marquee seamless --}}
                 @for ($i = 0; $i < 2; $i++)
                     <div class="flex gap-16 items-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500">
@@ -354,7 +353,7 @@
     </section>
 
     {{-- ================= CTA ================= --}}
-    <section class="py-24 relative overflow-hidden">
+    <section id="kontak" class="py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-blue-600"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-800"></div>
         {{-- Abstract Shapes --}}
@@ -369,11 +368,11 @@
                 Konsultasi gratis. Ceritakan kebutuhan sistem Anda, dan saya akan memberikan solusi teknis terbaik.
             </p>
             <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/62812xxxxxx" class="px-8 py-4 bg-white text-blue-700 font-bold rounded-full hover:bg-slate-100 transition shadow-xl flex items-center justify-center gap-2">
+                <a href="https://wa.me/6285724945467" target="_blank" class="px-8 py-4 bg-white text-blue-700 font-bold rounded-full hover:bg-slate-100 transition shadow-xl flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
                     Chat WhatsApp
                 </a>
-                <a href="mailto:ahasnan32@gmail.com" class="px-8 py-4 bg-transparent border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition">
+                <a href="mailto:ahasnan32@gmail.com"  target="_blank" class="px-8 py-4 bg-transparent border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition">
                     Kirim Email
                 </a>
             </div>
@@ -391,13 +390,12 @@
                     <span class="font-bold text-xl text-slate-900">CodeByHasnan</span>
                 </div>
                 <div class="flex gap-6">
-                    <a href="#" class="text-slate-400 hover:text-slate-900 transition"><i class="devicon-github-original text-2xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-blue-600 transition"><i class="devicon-linkedin-plain text-2xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-pink-600 transition"><i class="devicon-instagram-plain text-2xl"></i></a>
+                    <a href="https://github.com/HasnanAlii" target="_blank" class="text-slate-400 hover:text-slate-900 transition"><i class="devicon-github-original text-2xl"></i></a>
+                    <a href="https://www.linkedin.com/in/hasnan-ali-705184259/" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="devicon-linkedin-plain text-2xl"></i></a>
                 </div>
             </div>
             <div class="text-center md:text-left border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between text-sm text-slate-500">
-                <p>&copy; {{ date('Y') }} Hasnan Ali. All rights reserved.</p>
+                <p>&copy; {{ date('Y') }} Code By Hasnan. All rights reserved.</p>
                 <p>Made with <span class="text-red-500">&hearts;</span> using Laravel & Tailwind</p>
             </div>
         </div>
