@@ -37,15 +37,23 @@ class ProjekSeeder extends Seeder
         ];
 
         foreach ($data as $item) {
+
+            $bulan = $item[4];
+
             Projek::create([
                 'nama'          => $item[0],
                 'jenis'         => $item[1],
                 'harga'         => $item[2],
                 'nama_customer' => $item[3],
-                'deadline'      => Carbon::now()->addMonths(abs($item[4])),
+                'deadline'      => $bulan < 0 
+                                    ? Carbon::now()->subMonths(abs($bulan)) 
+                                    : Carbon::now()->addMonths($bulan),
+                'deskripsi'     => 'Proyek '.$item[0].' untuk '.$item[3],
                 'status'        => $item[5],
-                'created_at'    => Carbon::now()->subMonths(6),
-                'updated_at'    => Carbon::now()->subMonths(6),
+                'created_at'    => $bulan < -5 
+                                    ? Carbon::now()->subMonths(6)   // lama
+                                    : Carbon::now()->subMonths(2),  // masih baru
+                'updated_at'    => Carbon::now(),
             ]);
         }
     }

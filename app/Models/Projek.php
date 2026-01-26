@@ -15,6 +15,8 @@ class Projek extends Model
         'nama',
         'jenis',
         'harga',
+        'foto',
+        'deskripsi',
         'nama_customer',
         'deadline',
         'status',
@@ -32,5 +34,10 @@ class Projek extends Model
     public function keuangans()
     {
         return $this->hasMany(Keuangan::class, 'id_projek');
+    }
+
+    public function media()
+    {
+        return $this->hasMany(Media::class, 'id_projek');
     }
 }

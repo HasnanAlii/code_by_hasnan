@@ -14,6 +14,8 @@ return new class extends Migration {
             $table->integer('harga');
             $table->string('nama_customer');
             $table->date('deadline');
+            // $table->string('foto')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->enum('status', ['pending', 'proses', 'selesai', 'batal'])->default('pending');
             $table->timestamps();
         });

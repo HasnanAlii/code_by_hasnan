@@ -42,7 +42,8 @@
 
                 <div class="p-6 md:p-8">
                     {{-- Perhatikan rute update dan method PUT --}}
-                    <form method="POST" action="{{ route('projek.update', $projek->id) }}">
+                    <form method="POST" action="{{ route('projek.update', $projek->id) }}" enctype="multipart/form-data">
+
                         @csrf
                         @method('PUT')
 
@@ -230,6 +231,74 @@
                                 </div>
                             </label>
                         </div>
+
+                        <hr class="border-gray-100 my-7">
+
+                        {{-- 5. DESKRIPSI & MEDIA --}}
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
+                                <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-xs">5</span>
+                                Deskripsi & Media
+                            </label>
+
+                            {{-- Deskripsi --}}
+                            <div class="mb-6">
+                                <label for="deskripsi" class="block text-xs font-semibold text-gray-500 mb-1 uppercase">Deskripsi Projek</label>
+                                <textarea name="deskripsi" id="deskripsi" rows="4"
+                                    class="block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
+                                    placeholder="Jelaskan detail projek...">{{ old('deskripsi', $projek->deskripsi) }}</textarea>
+                                @error('deskripsi') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
+                            </div>
+
+                            {{-- FOTO LAMA --}}
+                        @if($projek->media->count())
+                        <div class="mb-6">
+                            <label class="block text-xs font-semibold text-gray-500 mb-2 uppercase">Foto Saat Ini</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="old-photo-wrapper">
+                                @foreach($projek->media as $img)
+                        <div class="relative group photo-item">
+                            <img src="{{ asset('storage/'.$img->foto) }}" class="rounded-lg object-cover h-28 w-full">
+                            <label class="absolute top-1 right-1 bg-white/80 rounded p-1 cursor-pointer flex items-center gap-1">
+                                <input type="checkbox" name="hapus_foto[]" value="{{ $img->id }}"
+                                    class="hidden peer" onchange="markForDelete(this)">
+                                <span class="text-xs text-red-600 peer-checked:font-bold">Hapus</span>
+                            </label>
+                        </div>
+
+                                @endforeach
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Centang foto untuk dihapus</p>
+                        </div>
+                        @endif
+
+
+                            {{-- Upload Foto Baru (Dinamis) --}}
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 mb-2 uppercase">Tambah Foto Baru</label>
+
+                                <div id="foto-wrapper" class="space-y-3">
+                                    <div class="flex gap-2">
+                                        <input type="file" name="foto[]" 
+                                            class="flex-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4
+                                                file:rounded-xl file:border-0
+                                                file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                        <button type="button" onclick="removeFoto(this)" 
+                                            class="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200">
+                                            ✕
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button type="button" onclick="addFoto()" 
+                                    class="mt-3 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 text-sm font-semibold">
+                                    + Tambah Foto
+                                </button>
+
+                                <p class="mt-1 text-xs text-gray-400">Bisa upload lebih dari satu gambar (JPG, PNG).</p>
+                            </div>
+                        </div>
+
+
                         @error('status') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
 
                             {{-- TOMBOL AKSI --}}
@@ -282,3 +351,53 @@
         });
     </script>
 </x-app-layout>
+
+<script>
+function markForDelete(checkbox) {
+    const photoItem = checkbox.closest('.photo-item');
+
+    if (checkbox.checked) {
+        photoItem.classList.add('opacity-40');
+        photoItem.classList.add('grayscale');
+        photoItem.style.pointerEvents = "none"; // tidak bisa diklik lagi
+    }
+}
+</script>
+
+<script>
+function removePreview(checkbox) {
+    if (checkbox.checked) {
+        const photoItem = checkbox.closest('.photo-item');
+        photoItem.classList.add('opacity-50'); // efek fade
+        setTimeout(() => {
+            photoItem.remove(); // hapus dari tampilan
+        }, 200);
+    }
+}
+</script>
+
+<script>
+function addFoto() {
+    const wrapper = document.getElementById('foto-wrapper');
+
+    const div = document.createElement('div');
+    div.className = "flex gap-2";
+
+    div.innerHTML = `
+        <input type="file" name="foto[]" 
+            class="flex-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4
+                file:rounded-xl file:border-0
+                file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+        <button type="button" onclick="removeFoto(this)" 
+            class="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200">
+            ✕
+        </button>
+    `;
+
+    wrapper.appendChild(div);
+}
+
+function removeFoto(btn) {
+    btn.parentElement.remove();
+}
+</script>

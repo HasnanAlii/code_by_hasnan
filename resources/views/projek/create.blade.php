@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="p-6 md:p-8">
-                    <form method="POST" action="{{ route('projek.store') }}">
+                  <form method="POST" action="{{ route('projek.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="space-y-8">
@@ -175,6 +175,78 @@
                                 </div>
                                 @error('status') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
                             </div>
+
+                            <hr class="border-gray-100">
+
+{{-- 5. DESKRIPSI & MEDIA --}}
+<div>
+    <label class="block text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
+        <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-xs">5</span>
+        Deskripsi & Media
+    </label>
+
+    {{-- Deskripsi --}}
+    <div class="mb-6">
+        <label for="deskripsi" class="block text-xs font-semibold text-gray-500 mb-1 uppercase">Deskripsi Projek</label>
+        <textarea name="deskripsi" id="deskripsi" rows="4"
+            class="block w-full border border-gray-300 rounded-xl shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 px-4 transition"
+            placeholder="Jelaskan detail projek...">{{ old('deskripsi') }}</textarea>
+        @error('deskripsi') <p class="mt-2 text-sm text-red-600">{{ $message }}</p> @enderror
+    </div>
+
+    {{-- Upload Foto --}}
+ <div>
+    <label class="block text-xs font-semibold text-gray-500 mb-2 uppercase">Upload Foto Projek</label>
+
+    <div id="foto-wrapper" class="space-y-3">
+        <div class="flex gap-2">
+            <input type="file" name="foto[]" 
+                class="flex-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4
+                       file:rounded-xl file:border-0
+                       file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            <button type="button" onclick="removeFoto(this)" 
+                class="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200">
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <button type="button" onclick="addFoto()" 
+        class="mt-3 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 text-sm font-semibold">
+        + Tambah Foto
+    </button>
+
+    <p class="mt-1 text-xs text-gray-400">Bisa upload lebih dari satu gambar (JPG, PNG).</p>
+</div>
+<script>
+function addFoto() {
+    const wrapper = document.getElementById('foto-wrapper');
+
+    const div = document.createElement('div');
+    div.className = "flex gap-2";
+
+    div.innerHTML = `
+        <input type="file" name="foto[]" 
+            class="flex-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4
+                   file:rounded-xl file:border-0
+                   file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+        <button type="button" onclick="removeFoto(this)" 
+            class="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200">
+            ✕
+        </button>
+    `;
+
+    wrapper.appendChild(div);
+}
+
+function removeFoto(btn) {
+    const row = btn.parentElement;
+    row.remove();
+}
+</script>
+
+</div>
+
 
                             {{-- TOMBOL AKSI --}}
                             <div class="flex justify-end gap-3 pt-6 border-t border-gray-100">
