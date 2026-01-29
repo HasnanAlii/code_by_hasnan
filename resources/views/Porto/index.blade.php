@@ -166,6 +166,21 @@
             </a>
 
         </div>
+        <div class="flex flex-wrap justify-center md:justify-start gap-8 pt-4">
+            <div class="text-center md:text-left">
+                <p class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                2+ <span class="text-base font-semibold align-bottom">Tahun</span>
+            </p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Pengalaman Coding</p>
+            </div>
+
+            <div class="text-center md:text-left">
+                <p class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                    {{ $projek->where('status','selesai')->count() }}+
+                </p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Projek Selesai</p>
+            </div>
+        </div>
     </div>
 
     <div class="hidden md:flex md:w-1/2 relative justify-center items-center mt-10 md:mt-0">
@@ -537,6 +552,104 @@
             </div>
         </div>
     </section>
+
+<section id="github" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-12">
+        
+        <div class="text-center mb-12">
+            <span class="text-green-600 dark:text-green-400 font-bold tracking-wider uppercase text-sm">Open Source Activity</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Jejak Kontribusi</h2>
+            <p class="mt-4 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+                Dedikasi dan konsistensi dalam menulis kode setiap harinya.
+            </p>
+        </div>
+
+        <div class="relative group" 
+             x-data="{ 
+                count: 0, 
+                target: 150, 
+                duration: 2000,
+                animateCount() {
+                    let start = 0;
+                    const stepTime = Math.abs(Math.floor(this.duration / this.target));
+                    const timer = setInterval(() => {
+                        start += 1;
+                        this.count = start;
+                        if (start >= this.target) clearInterval(timer);
+                    }, stepTime);
+                }
+             }"
+             x-init="animateCount()"
+             x-intersect="animateCount()" 
+        >
+            <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+            
+            <div class="relative bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-10 shadow-xl overflow-hidden">
+                
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-green-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+                <div class="flex flex-col xl:flex-row items-center gap-8 relative z-10">
+                    
+                    <div class="w-full xl:w-1/4 flex flex-col items-center xl:items-start text-center xl:text-left space-y-2">
+                        <div class="inline-flex items-center justify-center p-3 bg-green-100 dark:bg-green-900/30 rounded-xl mb-2">
+                            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                            <span x-text="count">0</span>
+                        </h3>
+                        <p class="text-lg font-medium text-green-600 dark:text-green-400">Total Contributions</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Dalam satu tahun terakhir</p>
+                    </div>
+
+                    <div class="w-full xl:w-3/4 overflow-x-auto pb-4 custom-scrollbar flex justify-center xl:justify-end">
+                         <img 
+                            src="https://ghchart.rshah.org/2ecc71/HasnanAlii" 
+                            alt="GitHub Chart"
+                            class="min-w-[650px] w-full rounded-lg opacity-90 hover:opacity-100 transition duration-300"
+                        >
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Update otomatis dari GitHub
+                    </div>
+                    
+                    <a href="https://github.com/HasnanAlii" target="_blank"
+                       class="inline-flex items-center gap-2 text-sm font-bold text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 transition">
+                        Kunjungi Profil
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">Laravel</span>
+                <span class="text-xs font-medium px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full">Backend</span>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">Vue.js</span>
+                <span class="text-xs font-medium px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full">Frontend</span>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">Tailwind</span>
+                <span class="text-xs font-medium px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 rounded-full">Styling</span>
+            </div>
+             <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">MySQL</span>
+                <span class="text-xs font-medium px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">Data</span>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <footer id="contact" class="relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-20 pb-10 transition-colors duration-300">
         

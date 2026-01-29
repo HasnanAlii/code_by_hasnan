@@ -247,7 +247,7 @@
 
                                                 {{-- JENIS --}}
                                                 <td class="px-6 py-4 text-center">
-                                                    @if($log->arus_dana === 'masuk')
+                                                    @if($log->jenis === 'masuk')
                                                         <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold
                                                                     bg-emerald-100 text-emerald-700">
                                                             <i data-feather="arrow-down-left" class="w-3 h-3 mr-1"></i>

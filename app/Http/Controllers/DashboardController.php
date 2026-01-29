@@ -44,7 +44,7 @@ public function index(Request $request)
         'totalKeluar' => $totalKeluar,
         'saldo' => $saldo, 
         'totalProjekSelesai' => $totalProjekSelesai,
-        'logs' => $keuanganBulanan->latest()->limit(3)->get(),
+        'logs' => $keuanganBulanan->latest()->limit(2)->get(),
     ]);
 }
 
