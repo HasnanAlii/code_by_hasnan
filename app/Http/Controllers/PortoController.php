@@ -11,7 +11,7 @@ class PortoController extends Controller
 
 public function index(Request $request)
 {
-   $projek = Projek::all();
+   $projek = Projek::all()->sortByDesc('created_at');
    return view('Porto.index', compact('projek'));
 }
 

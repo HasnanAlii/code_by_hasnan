@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
@@ -129,7 +131,7 @@
                     <a href="#layanan" class="px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 hover:-translate-y-1 transition shadow-xl shadow-slate-900/20">
                         Lihat Layanan
                     </a>
-                    <a href="/portofolio" class="px-8 py-4 bg-white text-slate-700 font-bold border border-slate-200 rounded-full hover:border-blue-300 hover:text-blue-600 transition flex items-center justify-center gap-2">
+                    <a href="/portofolio" target="blank_" class="px-8 py-4 bg-white text-slate-700 font-bold border border-slate-200 rounded-full hover:border-blue-300 hover:text-blue-600 transition flex items-center justify-center gap-2">
                         <span>Portofolio Saya</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
