@@ -8,9 +8,8 @@ use App\Http\Controllers\ProjekController;
 use App\Http\Controllers\PortoController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  [PortoController::class, 'welcome'])
+    ->name('welcome');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth'])
@@ -18,6 +17,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 Route::get('/portofolio', [PortoController::class, 'index'])
     ->name('portofolio');
+Route::get('/api/github', [PortoController::class, 'stats']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

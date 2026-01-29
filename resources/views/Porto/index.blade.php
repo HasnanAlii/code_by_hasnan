@@ -180,6 +180,13 @@
                 </p>
                 <p class="text-sm text-slate-500 dark:text-slate-400">Projek Selesai</p>
             </div>
+            <div class="text-center md:text-left">
+                <p class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                15+
+            </p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Tech Stack</p>
+            </div>
+
         </div>
     </div>
 
@@ -553,103 +560,145 @@
         </div>
     </section>
 
-<section id="github" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 md:px-12">
-        
-        <div class="text-center mb-12">
-            <span class="text-green-600 dark:text-green-400 font-bold tracking-wider uppercase text-sm">Open Source Activity</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Jejak Kontribusi</h2>
-            <p class="mt-4 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
-                Dedikasi dan konsistensi dalam menulis kode setiap harinya.
-            </p>
-        </div>
-
-        <div class="relative group" 
-             x-data="{ 
-                count: 0, 
-                target: 150, 
-                duration: 2000,
-                animateCount() {
-                    let start = 0;
-                    const stepTime = Math.abs(Math.floor(this.duration / this.target));
-                    const timer = setInterval(() => {
-                        start += 1;
-                        this.count = start;
-                        if (start >= this.target) clearInterval(timer);
-                    }, stepTime);
-                }
-             }"
-             x-init="animateCount()"
-             x-intersect="animateCount()" 
-        >
-            <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+    <section id="github" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-12">
             
-            <div class="relative bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-10 shadow-xl overflow-hidden">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider uppercase text-sm">GitHub Activity</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Statistik Kontribusi</h2>
+                <p class="mt-4 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+                    Melacak aktivitas Public & Private contributions secara real-time.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 
-                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-green-500/10 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
-
-                <div class="flex flex-col xl:flex-row items-center gap-8 relative z-10">
-                    
-                    <div class="w-full xl:w-1/4 flex flex-col items-center xl:items-start text-center xl:text-left space-y-2">
-                        <div class="inline-flex items-center justify-center p-3 bg-green-100 dark:bg-green-900/30 rounded-xl mb-2">
-                            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                            </svg>
-                        </div>
+                <div class="lg:col-span-4 flex flex-col h-full">
+                    <div class="relative bg-slate-50 dark:bg-slate-800/60 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-indigo-500/10 transition duration-300 flex flex-col items-center text-center overflow-hidden group h-full justify-between">
                         
-                        <h3 class="text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                            <span x-text="count">0</span>
-                        </h3>
-                        <p class="text-lg font-medium text-green-600 dark:text-green-400">Total Contributions</p>
-                        <p class="text-sm text-slate-500 dark:text-slate-400">Dalam satu tahun terakhir</p>
-                    </div>
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-purple-500/10 rounded-tr-full -ml-4 -mb-4 transition-transform group-hover:scale-110"></div>
 
-                    <div class="w-full xl:w-3/4 overflow-x-auto pb-4 custom-scrollbar flex justify-center xl:justify-end">
-                         <img 
-                            src="https://ghchart.rshah.org/2ecc71/HasnanAlii" 
-                            alt="GitHub Chart"
-                            class="min-w-[650px] w-full rounded-lg opacity-90 hover:opacity-100 transition duration-300"
-                        >
+                        <div class="relative z-10 w-full flex flex-col items-center">
+                            <div class="relative mb-6">
+                                <div class="absolute inset-0 rounded-full bg-indigo-500 blur-md opacity-20 animate-pulse"></div>
+                                <img 
+                                    src="https://github.com/hasnanalii.png"
+                                    alt="Hasnan GitHub Profile"
+                                    class="relative w-28 h-28 rounded-full object-cover border-4 border-white dark:border-slate-900 shadow-xl"
+                                >
+                                {{-- <div class="absolute bottom-1 right-1 w-6 h-6 bg-green-500 border-4 border-white dark:border-slate-900 rounded-full" title="Available for hire"></div> --}}
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Hasnan Ali</h3>
+                            <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400 mb-1">Full Stack Developer</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Laravel Enthusiast</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 w-full my-8 relative z-10">
+                            <div class="bg-white dark:bg-slate-900/80 rounded-xl p-4 border border-slate-100 dark:border-slate-700 shadow-sm">
+                                <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1">Contributions</p>
+                                <p class="text-2xl font-extrabold text-slate-900 dark:text-white" id="total-contrib">...
+                                </p>
+                                <span class="text-xs font-semibold align-bottom">(1 Tahun)</span>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900/80 rounded-xl p-4 border border-slate-100 dark:border-slate-700 shadow-sm">
+                                <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1">Public Repos</p>
+                                <p class="text-2xl font-extrabold text-slate-900 dark:text-white" id="repo-count">...</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="w-full relative z-10">
+                            <a href="https://github.com/HasnanAlii" target="_blank"
+                            class="inline-flex items-center justify-center w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-indigo-600 dark:hover:bg-indigo-400 dark:hover:text-white rounded-xl text-sm font-bold transition-all duration-300 gap-2 shadow-lg hover:shadow-indigo-500/20 transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.11 3.29 9.44 7.86 10.97.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.38-3.87-1.38-.52-1.33-1.27-1.69-1.27-1.69-1.04-.72.08-.71.08-.71 1.15.08 1.76 1.2 1.76 1.2 1.02 1.75 2.67 1.24 3.32.95.1-.75.4-1.24.72-1.53-2.55-.29-5.23-1.29-5.23-5.74 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19a10.9 10.9 0 0 1 5.8 0c2.2-1.5 3.18-1.19 3.18-1.19.63 1.65.23 2.87.11 3.17.75.81 1.2 1.85 1.2 3.12 0 4.46-2.69 5.45-5.25 5.73.41.36.77 1.08.77 2.18v3.24c0 .31.21.67.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
+                                </svg>
+                                Follow di GitHub
+                            </a>
+                            <p class="text-[10px] text-slate-400 italic mt-4">
+                                *Data dihitung dari repo Public & Private
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        Update otomatis dari GitHub
+                <div class="lg:col-span-8 h-full">
+                    <div class="relative group h-full">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                        
+                        <div class="relative h-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col justify-center">
+                            
+                            <div class="flex items-center justify-between mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                                <h3 class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2 text-lg">
+                                    <span class="p-2 bg-indigo-50 dark:bg-slate-800 rounded-lg text-indigo-600 dark:text-indigo-400">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    </span>
+                                    Contribution Calendar
+                                </h3>
+                                <div class="flex items-center gap-2">
+                                    <span class="relative flex h-3 w-3">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                    </span>
+                                    <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Live Data</span>
+                                </div>
+                            </div>
+
+                            <div class="w-full overflow-x-auto pb-4 custom-scrollbar flex items-center justify-center flex-grow bg-slate-50 dark:bg-[#0d1117] rounded-xl border border-slate-100 dark:border-slate-800">
+                            <img 
+                                src="https://ghchart.rshah.org/hasnanalii"
+                                alt="HasnanAlii GitHub Contribution Chart"
+                                class="min-w-[650px] px-2 w-full transition-all duration-300 dark:invert-[.92] dark:hue-rotate-180"
+                                >
+                            </div>
+
+                            <div class="mt-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 dark:text-slate-400 gap-2">
+                                <p>Menampilkan kontribusi setahun terakhir.</p>
+                                <!-- Light Mode Legend -->
+                                <div class="flex items-center gap-1 dark:hidden">
+                                    <span class="text-xs text-slate-500">Less</span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-slate-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-green-300"></span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-green-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-green-700"></span>
+                                    <span class="text-xs text-slate-500">More</span>
+                                </div>
+
+                                <!-- Dark Mode Legend -->
+                                <div class="hidden dark:flex items-center gap-1">
+                                    <span class="text-xs text-slate-400">Less</span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-slate-800"></span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-emerald-400/40"></span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-emerald-400/70"></span>
+                                    <span class="w-2.5 h-2.5 rounded-sm bg-emerald-400"></span>
+                                    <span class="text-xs text-slate-400">More</span>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
-                    
-                    <a href="https://github.com/HasnanAlii" target="_blank"
-                       class="inline-flex items-center gap-2 text-sm font-bold text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 transition">
-                        Kunjungi Profil
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
                 </div>
+
             </div>
         </div>
+                <script>
+                fetch('/api/github')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('repo-count').innerText = data.repos;
+                    document.getElementById('total-contrib').innerText = data.contributions + '+';
+                })
+                .catch(() => {
+                    document.getElementById('repo-count').innerText = '—';
+                    document.getElementById('total-contrib').innerText = '—';
+                });
+                </script>
+    </section>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
-                <span class="text-2xl font-bold text-slate-900 dark:text-white">Laravel</span>
-                <span class="text-xs font-medium px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full">Backend</span>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
-                <span class="text-2xl font-bold text-slate-900 dark:text-white">Vue.js</span>
-                <span class="text-xs font-medium px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full">Frontend</span>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
-                <span class="text-2xl font-bold text-slate-900 dark:text-white">Tailwind</span>
-                <span class="text-xs font-medium px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 rounded-full">Styling</span>
-            </div>
-             <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:border-green-500/30 transition">
-                <span class="text-2xl font-bold text-slate-900 dark:text-white">MySQL</span>
-                <span class="text-xs font-medium px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">Data</span>
-            </div>
-        </div>
 
-    </div>
-</section>
 
     <footer id="contact" class="relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-20 pb-10 transition-colors duration-300">
         

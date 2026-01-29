@@ -8,16 +8,17 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700,800" rel="stylesheet" />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
     <meta name="theme-color" content="#2563eb">
-
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    {{-- Load DevIcons CSS --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <style>
         [x-cloak] { display: none !important; }
@@ -70,7 +71,7 @@
                 
                 {{-- Logo --}}
                 <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-14   flex rounded-md items-center justify-center text-white font-bold text-lg g shadow-blue-500/30 group-hover:scale-105 transition duration-300">
+                    <div class="w-14 flex rounded-md items-center justify-center text-white font-bold text-lg shadow-blue-500/30 group-hover:scale-105 transition duration-300">
                         <img src="{{ asset('images/logo.png') }}" alt="">
                     </div>
                     <span class="font-bold text-xl tracking-tight text-slate-900">CodeByHasnan</span>
@@ -80,12 +81,13 @@
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Tentang</a>
                     <a href="#layanan" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Layanan</a>
+                    <a href="#portfolio" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Portofolio</a>
                     <a href="#kontak" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Kontak</a>
                 </div>
 
                 {{-- CTA Button --}}
                 <div class="hidden md:flex items-center gap-3">
-                <a href="#kontak" class="px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">Konsultasi</a>
+                    <a href="#kontak" class="px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">Konsultasi</a>
                 </div>
 
                 {{-- Mobile Menu Button --}}
@@ -100,6 +102,7 @@
         class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl p-4 flex flex-col gap-4">
             <a href="#about" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Tentang</a>
             <a href="#layanan" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Layanan</a>
+            <a href="#portfolio" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Portofolio</a>
             <a href="#kontak" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Kontak</a>
             <hr class="border-slate-100">
         </div>
@@ -110,19 +113,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col items-center text-center">
                 
-                {{-- Badge --}}
-                {{-- <div data-aos="fade-down" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 mb-8">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                    </span>
-                    <span class="text-xs font-bold uppercase tracking-widest">Available for Freelance</span>
-                </div> --}}
-
                 {{-- Headline --}}
                 <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
-                    Ubah Ide Menjadi <br>
-                    <span class="text-gradient">Realitas Digital</span>
+                    Code By Hasnan <br>
+                    <span class="text-gradient">Jasa Pembuatan Website</span>
                 </h1>
 
                 {{-- Subheadline --}}
@@ -142,20 +136,10 @@
                         </svg>
                     </a>
                 </div>
-
-                {{-- Mockup Illustration (Floating) --}}
-                <div data-aos="zoom-in" data-aos-delay="500" class="mt-20 relative w-full max-w-5xl animate-float">
-                    <div class="relative rounded-2xl bg-slate-900/5 p-2 sm:p-4 ring-1 ring-slate-900/10 shadow-2xl backdrop-blur-sm">
-                        {{-- Ganti src ini dengan screenshot projek terbaikmu --}}
-                        <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&auto=format&fit=crop&w=1664&q=80" 
-                             alt="App Screenshot" 
-                             class="rounded-xl shadow-lg w-full h-auto border border-slate-200/50">
-                    </div>
-                    
-                    {{-- Decorative Blurs --}}
-                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500 rounded-full blur-[80px] opacity-20 -z-10"></div>
-                    <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 -z-10"></div>
+       
                 </div>
+
+               
             </div>
         </div>
     </section>
@@ -163,53 +147,44 @@
     <section id="skill" class="py-10 border-y border-slate-100 bg-white/50 backdrop-blur-sm overflow-hidden">
         <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Teknologi yang Saya Gunakan</p>
         
-        <div class="relative w-full overflow-hidden">
-            {{-- Durasi diperlambat ke 35s karena item lebih banyak --}}
-            <div class="flex whitespace-nowrap animate-scroll gap-16 items-center" style="animation-duration: 25s;">
-                {{-- Loop digandakan agar marquee seamless --}}
+        <div class="relative w-full overflow-hidden py-6">
+            <div class="flex whitespace-nowrap animate-scroll gap-16 items-center" style="animation-duration: 35s;">
                 @for ($i = 0; $i < 2; $i++)
-                    <div class="flex gap-16 items-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500">
-                        
-                        {{-- Backend & Core --}}
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-laravel-plain text-red-600"></i> Laravel</span>
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-php-plain text-indigo-500"></i> PHP</span>
-                        
-                        {{-- Frontend Web --}}
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-html5-plain text-orange-600"></i> HTML</span>
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-css3-plain text-blue-600"></i> CSS</span>
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-javascript-plain text-yellow-400"></i> JavaScript</span>
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-tailwindcss-original text-cyan-400"></i> Tailwind</span>
-                        
-                        {{-- Database --}}
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-mysql-plain text-blue-600"></i> MySQL</span>
-                        
-                        {{-- Mobile --}}
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-flutter-plain text-blue-400"></i> Flutter</span>
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-dart-plain text-cyan-500"></i> Dart</span>
-                        
-                        {{-- Tools & Others --}}
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-git-plain text-red-500"></i> Git</span>
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-github-original text-slate-800"></i> GitHub</span>
-                        <span class="text-2xl font-bold flex items-center gap-2">
-                            {{-- Icon SVG manual untuk REST API karena tidak ada di devicon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            REST API
-                        </span>
-                        <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-linux-plain text-black"></i> Linux</span>
+                <div class="flex gap-16 items-center opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500">
 
-                    </div>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-laravel-plain text-red-600"></i> Laravel</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-php-plain text-indigo-500"></i> PHP</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-mysql-plain text-blue-600"></i> MySQL</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-postgresql-plain text-blue-500"></i> PostgreSQL</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-javascript-plain text-yellow-400"></i> JavaScript</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-jquery-plain text-blue-400"></i> jQuery</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-html5-plain text-orange-600"></i> HTML</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-tailwindcss-original text-cyan-400"></i> Tailwind</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-bootstrap-plain text-purple-600"></i> Bootstrap</span>
+                    <span class="text-2xl font-bold flex items-center gap-2">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        REST API
+                    </span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-flutter-plain text-blue-400"></i> Flutter</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-dart-plain text-cyan-500"></i> Dart</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-git-plain text-red-500"></i> Git</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-github-original text-slate-800"></i> GitHub</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-nodejs-plain text-green-600"></i> Node.js</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-nestjs-plain text-red-600"></i> NestJS</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-mongodb-plain text-green-500"></i> MongoDB</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-go-original-wordmark text-cyan-600"></i> Golang</span>
+                    <span class="text-2xl font-bold flex items-center gap-2"><i class="devicon-vuejs-plain text-green-500"></i> Vue.js</span>
+
+                </div>
                 @endfor
             </div>
-            
-            {{-- Fade Edges --}}
+        </div>
+
             <div class="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
             <div class="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
         </div>
-        
-        {{-- Load DevIcons CSS --}}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     </section>
 
     {{-- ================= ABOUT & STATS ================= --}}
@@ -227,16 +202,29 @@
                     </p>
                 </div>
 
-                <div class="mt-8 grid grid-cols-2 gap-6">
-                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                        <div class="text-3xl font-bold text-blue-600 mb-1">10+</div>
-                        <div class="text-sm font-medium text-slate-600">Projek Selesai</div>
+                {{-- INTEGRASI: Statistik Baru --}}
+                <div class="flex flex-wrap justify-center md:justify-start gap-8 pt-8">
+                    <div class="text-center md:text-left">
+                        <p class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                            2+ <span class="text-base font-semibold align-bottom">Tahun</span>
+                        </p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Pengalaman Coding</p>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                        <div class="text-3xl font-bold text-indigo-600 mb-1">100%</div>
-                        <div class="text-sm font-medium text-slate-600">Client Satisfaction</div>
+
+                    <div class="text-center md:text-left">
+                        <p class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                            {{ $projek->where('status','selesai')->count() }}+
+                        </p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Projek Selesai</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                            15+
+                        </p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Tech Stack</p>
                     </div>
                 </div>
+                {{-- END INTEGRASI --}}
             </div>
 
             <div data-aos="fade-left" class="relative">
@@ -262,31 +250,17 @@
                                 <p class="text-sm text-slate-500">Optimasi database dan aset agar website loading cepat.</p>
                             </div>
                         </li>
-                        {{-- <li class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            </div>
-                            <div>
-                                <strong class="text-slate-900">Keamanan Terjamin</strong>
-                                <p class="text-sm text-slate-500">Proteksi dari serangan umum (SQL Injection, XSS, CSRF).</p>
-                            </div>
-                        </li> --}}
                         <li class="flex items-start gap-3">
                             <div class="w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-
                             </div>
                             <div>
                                 <strong class="text-slate-900">Pengerjaan Cepat</strong>
-                                <p class="text-sm text-slate-500">
-                                    Proses pengembangan efisien dengan estimasi waktu jelas dan terukur.
-                                </p>
+                                <p class="text-sm text-slate-500">Proses pengembangan efisien dengan estimasi waktu jelas dan terukur.</p>
                             </div>
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -353,6 +327,176 @@
             </div>
         </div>
     </section>
+
+
+    <section id="portfolio" class="py-24 bg-slate-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-center md:text-left">
+            <div data-aos="fade-up">
+                <span class="text-indigo-600 font-bold tracking-wider uppercase text-sm">Portofolio</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Projek Terbaru</h2>
+                <p class="mt-4 text-slate-500 max-w-xl mx-auto md:mx-0">
+                    Kumpulan projek yang saya kerjakan untuk klien instansi, UMKM, dan tugas akademik.
+                </p>
+            </div>
+            <div class="hidden md:block" data-aos="fade-left">
+                <a href="#kontak" class="text-indigo-600 font-semibold hover:text-indigo-800 flex items-center gap-2">
+                    Mulai Projek Bersama <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @forelse($projek as $item)
+            @php
+                $images = $item->media->map(fn($m) => asset('storage/'.$m->foto))->toArray();
+                if(empty($images)) { $images = ['https://placehold.co/800x600?text=No+Image']; }
+            @endphp
+
+            <div x-data="{ 
+                openModal: false, 
+                currentIndex: 0, 
+                images: {{ json_encode($images) }},
+                next() { this.currentIndex = (this.currentIndex + 1) % this.images.length },
+                prev() { this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length }
+            }" class="h-full" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                
+                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 overflow-hidden flex flex-col h-full">
+                    <div class="h-56 bg-slate-200 overflow-hidden relative cursor-pointer" @click="openModal = true">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition z-10"></div>
+                        <img src="{{ $images[0] }}" alt="{{ $item->nama }}" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 text-xs font-bold rounded-full shadow-sm backdrop-blur-md
+                                {{ $item->status == 'selesai' ? 'bg-green-500 text-white' : ($item->status == 'proses' ? 'bg-yellow-400 text-yellow-900' : 'bg-slate-500 text-white') }}">
+                                {{ ucfirst($item->status) }}
+                            </span>
+                        </div>
+                        @if(count($images) > 1)
+                        <div class="absolute bottom-3 right-3 z-20 bg-black/60 text-white text-[10px] px-2 py-1 rounded-md">
+                            +{{ count($images) - 1 }} Gambar
+                        </div>
+                        @endif
+                    </div>
+                    
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-indigo-600 uppercase mb-2">{{ $item->jenis }}</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition cursor-pointer" @click="openModal = true">
+                            {{ $item->nama }}
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-3 leading-relaxed">
+                            {{ $item->deskripsi }}
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
+                            <div class="flex items-center gap-2 text-sm text-slate-500">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                <span class="truncate max-w-[120px]">{{ $item->nama_customer }}</span>
+                            </div>
+                            <button @click="openModal = true" class="text-sm font-semibold text-indigo-600 flex items-center gap-1">
+                                Detail
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <template x-teleport="body">
+                    <div x-show="openModal" 
+                        class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm"
+                        x-transition.opacity>
+                        
+                        <div @click.outside="openModal = false" 
+                            class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto border border-slate-200">
+                            
+                            <!-- Image Slider -->
+                            <div class="relative h-72 md:h-96 bg-slate-100">
+                                <button @click="openModal = false" 
+                                    class="absolute top-4 right-4 bg-black/60 hover:bg-black text-white p-2 rounded-full transition z-30">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+
+                                <img :src="images[currentIndex]" class="w-full h-full object-contain transition-all duration-500">
+
+                                <template x-if="images.length > 1">
+                                    <div>
+                                        <button @click="prev()" 
+                                            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-3 rounded-full text-slate-700 shadow transition z-20">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                            </svg>
+                                        </button>
+                                        <button @click="next()" 
+                                            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-3 rounded-full text-slate-700 shadow transition z-20">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                            </svg>
+                                        </button>
+
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                                            <template x-for="(img, index) in images" :key="index">
+                                                <button @click="currentIndex = index" 
+                                                    :class="currentIndex === index ? 'bg-indigo-600 w-6' : 'bg-indigo-300 w-2'"
+                                                    class="h-2 rounded-full transition-all duration-300"></button>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+
+                            <!-- Modal Info -->
+                            <div class="p-8">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold uppercase rounded-md">
+                                        {{ $item->jenis }}
+                                    </span>
+                                    <span class="text-slate-400 text-sm">|</span>
+                                    <span class="text-sm font-medium text-slate-500">Status: {{ ucfirst($item->status) }}</span>
+                                </div>
+
+                                <h3 class="text-3xl font-bold text-slate-900 mb-4">{{ $item->nama }}</h3>
+                                
+                                <div class="prose prose-slate max-w-none text-slate-600 mb-8">
+                                    <p class="whitespace-pre-line">{{ $item->deskripsi }}</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 rounded-xl p-6 border border-slate-100">
+                                    <div>
+                                        <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Klien / Instansi</p>
+                                        <p class="font-semibold text-slate-700">{{ $item->nama_customer }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Teknologi</p>
+                                        <p class="font-semibold text-slate-700">Laravel, Tailwind, MySQL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+            @empty
+            <div class="col-span-full flex flex-col items-center justify-center py-20 text-center">
+                <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4 text-slate-400">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-medium text-slate-900">Belum ada projek</h3>
+                <p class="text-slate-500 max-w-sm mt-2">Data portofolio belum ditambahkan ke database.</p>
+            </div>
+            @endforelse
+        </div>
+    </div>
+</section>
 
     {{-- ================= CTA ================= --}}
     <section id="kontak" class="py-24 relative overflow-hidden">
