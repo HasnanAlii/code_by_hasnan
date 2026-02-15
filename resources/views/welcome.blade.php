@@ -271,64 +271,194 @@
     </section>
 
     {{-- ================= SERVICES (BENTO GRID) ================= --}}
-    <section id="layanan" class="py-24 bg-slate-50/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Layanan & Keahlian</h2>
-                <p class="text-slate-500">Apa yang bisa saya bangun untuk bisnis Anda?</p>
+<section id="layanan" class="py-24 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                Layanan & Keahlian
+            </h2>
+            <p class="text-slate-500 max-w-2xl mx-auto">
+                Solusi teknologi yang dirancang khusus untuk mempercepat pertumbuhan bisnis Anda.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+            
+            <div class="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="mb-4 bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-slate-800">Sistem Informasi Custom</h3>
+                <p class="text-slate-500">
+                    Pembuatan sistem ERP, HR, Payroll, Akademik Sekolah, dan manajemen database yang disesuaikan dengan alur kerja bisnis Anda.
+                </p>
             </div>
 
-            {{-- Bento Grid --}}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                {{-- Card 1: Large Left --}}
-                <div data-aos="fade-up" class="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl transition duration-300 group">
-                    <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Sistem Informasi Custom</h3>
-                    <p class="text-slate-500 mb-4">Membangun sistem kompleks sesuai alur bisnis Anda. Mulai dari ERP sederhana, Sistem HR, Penggajian, hingga Manajemen Sekolah.</p>
-                    <ul class="flex flex-wrap gap-2">
-                        <li class="px-3 py-1 bg-slate-100 rounded-full text-xs font-semibold text-slate-600">Dashboard Admin</li>
-                        <li class="px-3 py-1 bg-slate-100 rounded-full text-xs font-semibold text-slate-600">Export PDF/Excel</li>
-                        <li class="px-3 py-1 bg-slate-100 rounded-full text-xs font-semibold text-slate-600">Multi-Role User</li>
-                    </ul>
+            <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="mb-4 bg-slate-800 w-12 h-12 rounded-xl flex items-center justify-center text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                 </div>
+                <h3 class="text-xl font-bold mb-2">Landing Page</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    Website promosi modern, cepat, dan SEO friendly untuk meningkatkan konversi penjualan.
+                </p>
+            </div>
 
-                {{-- Card 2: Small Right --}}
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 shadow-lg text-white group hover:-translate-y-1 transition duration-300">
-                    <div class="h-12 w-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Landing Page</h3>
-                    <p class="text-slate-300 text-sm">Website profil perusahaan atau promosi produk yang estetik dan SEO Friendly.</p>
+            <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="mb-4 bg-green-50 w-12 h-12 rounded-xl flex items-center justify-center text-green-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                 </div>
+                <h3 class="text-xl font-bold mb-2 text-slate-800">Inventory</h3>
+                <p class="text-slate-500 text-sm">
+                    Kontrol stok barang, sistem barcode, dan laporan keluar-masuk barang real-time.
+                </p>
+            </div>
 
-                {{-- Card 3: Small Left --}}
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl transition duration-300 group hover:-translate-y-1">
-                    <div class="h-12 w-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Aplikasi Inventory</h3>
-                    <p class="text-slate-500 text-sm">Kelola stok barang masuk/keluar dengan akurat. Support barcode scanner.</p>
+            <div class="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="mb-4 bg-purple-50 w-12 h-12 rounded-xl flex items-center justify-center text-purple-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                 </div>
-
-                {{-- Card 4: Large Right --}}
-                <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl transition duration-300 group">
-                     <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6 group-hover:scale-110 transition">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">API & Integrasi</h3>
-                    <p class="text-slate-500 mb-4">Pembuatan REST API untuk aplikasi mobile (Flutter/Android) atau integrasi Payment Gateway (Midtrans, Xendit).</p>
-                    <ul class="flex flex-wrap gap-2">
-                        <li class="px-3 py-1 bg-slate-100 rounded-full text-xs font-semibold text-slate-600">Secure Auth (JWT)</li>
-                        <li class="px-3 py-1 bg-slate-100 rounded-full text-xs font-semibold text-slate-600">Fast Response</li>
-                    </ul>
-                </div>
-
+                <h3 class="text-2xl font-bold mb-2 text-slate-800">API & Integrasi</h3>
+                <p class="text-slate-500">
+                    Pengembangan REST API, integrasi Payment Gateway (Midtrans/Xendit), dan koneksi ke aplikasi Mobile.
+                </p>
             </div>
         </div>
-    </section>
+
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold text-slate-900">Pilihan Paket Harga</h3>
+            <p class="text-slate-500">Transparan dan sesuai skala bisnis Anda</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-slate-100 px-3 py-1 rounded-bl-xl text-xs font-semibold text-slate-500">STARTER</div>
+                
+                <h3 class="text-xl font-bold mb-2 text-slate-900">Paket Standar</h3>
+                <p class="text-slate-500 text-sm mb-6">
+                    Cocok untuk projek kecil seperti landing page sederhana, tugas ringan, atau personal branding dengan 1x revisi.
+                </p>
+
+
+                <div class="flex items-baseline gap-1 mb-6">
+                    <span class="text-3xl font-extrabold text-slate-900">Rp 200k</span>
+                    <span class="text-sm text-slate-400">/start</span>
+                </div>
+
+                <ul class="space-y-4 text-sm text-slate-600 mb-8 text-left">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Landing Page (One Page)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Responsive Mobile Design
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Basic SEO Setup
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        1x Revisi 
+                    </li>
+                </ul>
+
+                {{-- <button class="w-full py-3 rounded-xl border border-slate-900 text-slate-900 font-semibold hover:bg-slate-900 hover:text-white transition-colors duration-300">
+                    Pilih Standar
+                </button> --}}
+            </div>
+
+            <div class="bg-blue-600 text-white rounded-3xl p-8 shadow-2xl scale-100 md:scale-110 z-10  border border-blue-500  hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 px-4 py-1 rounded-bl-xl text-xs font-bold">TERPOPULER 🔥</div>
+                
+                <h3 class="text-xl font-bold mb-2">Paket Plus</h3>
+                <p class="text-blue-100 text-sm mb-6">
+                    Cocok untuk projek menengah seperti tugas kuliah, skripsi, atau sistem skala kecil-menengah dengan fitur lebih lengkap.
+                </p>
+
+
+                <div class="flex items-baseline gap-1 mb-6">
+                    <span class="text-4xl font-extrabold">Rp 700k</span>
+                    <span class="text-sm text-blue-200">/start</span>
+                </div>
+
+                <ul class="space-y-4 text-sm mb-8 text-left">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Sistem Informasi Custom
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Dashboard Admin Lengkap
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Multi User & Role Management
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Export Data (PDF/Excel)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        3x Revisi 
+                    </li>
+                </ul>
+{{-- 
+                <button class="w-full py-4 rounded-xl bg-white text-blue-700 font-bold hover:bg-blue-50 hover:shadow-lg transition-all duration-300">
+                    Ambil Paket Plus
+                </button> --}}
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+
+                 <div class="absolute top-0 right-0 bg-slate-900 text-white px-3 py-1 rounded-bl-xl text-xs font-semibold">ENTERPRISE</div>
+
+                <h3 class="text-xl font-bold mb-2 text-slate-900">Paket Bisnis</h3>
+               <p class="text-slate-500 text-sm mb-6">
+    Solusi khusus untuk memenuhi kebutuhan bisnis Anda dengan sistem yang kompleks, scalable, dan terintegrasi.
+</p>
+
+
+                <div class="flex items-baseline gap-1 mb-6">
+                    <span class="text-3xl font-extrabold text-slate-900">Custom</span>
+                    <span class="text-sm text-slate-400">price</span>
+                </div>
+
+                <ul class="space-y-4 text-sm text-slate-600 mb-8 text-left">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Full Custom Complex System
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        API & Third-party Integration
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Mobile Apps Ready (Flutter/React)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Priority Support & Maintenance
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Unlimited Revisi (selama kontrak)
+                    </li>
+                </ul>
+
+                {{-- <button class="w-full py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors duration-300">
+                    Hubungi Kami
+                </button> --}}
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
     <section id="portfolio" class="py-24 bg-slate-50 transition-colors duration-300">

@@ -410,6 +410,101 @@
     </div>
 </section>
 
+<section id="education" class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-12">
+        
+        <!-- Heading -->
+        <div class="mb-12 text-center md:text-left">
+            <span class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider uppercase text-sm">
+                Education
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">
+                Pendidikan Terakhir
+            </h2>
+            <p class="mt-4 text-slate-500 dark:text-slate-400 max-w-xl mx-auto md:mx-0">
+                Latar belakang pendidikan formal yang mendukung keahlian teknis dan profesional saya.
+            </p>
+        </div>
+
+        <!-- Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Card Pendidikan -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition p-6 flex gap-5 items-start">
+                
+                <!-- Icon -->
+                <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+                         <img src="{{ asset('images/unsur.png') }}" alt="">
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="flex-1">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                        Teknik Informatika
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                        Universitas Suryakancana
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 mt-4 text-xs">
+                        <span class="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-semibold">
+                            S1
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">
+                          2022 - 2026
+                        </span>
+                         <span class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-medium">
+                         GPA 3,5
+                        </span>
+                    </div>
+
+                    <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Fokus pada pengembangan perangkat lunak, sistem informasi, basis data, dan pemrograman web.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card Tambahan (opsional) -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition p-6 flex gap-5 items-start">
+                
+                <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-900/40 flex items-center justify-center">
+                         <img src="{{ asset('images/smk.png') }}" alt="">
+                    </div>
+                </div>
+
+                <div class="flex-1">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                        Teknik Komputer dan Jaringan
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                        SMKN 1 Cidaun
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 mt-4 text-xs">
+                        <span class="px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 font-semibold">
+                            SMK
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">
+                            2019 – 2022
+                        </span>
+                    </div>
+
+                    <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Mempelajari dasar jaringan komputer (LAN, IP Addressing), sistem operasi,
+                        perangkat keras, serta pengenalan pemrograman dan teknologi informasi
+                        sebagai fondasi pengembangan web dan sistem.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
     <section id="portfolio" class="py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 md:px-12">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-center md:text-left">
