@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',  [PortoController::class, 'welcome'])
     ->name('welcome');
 
+Route::get('/skripsi', [PortoController::class, 'skripsi'])
+    ->name('services.skripsi');
+
+Route::get('/kerja-praktek', [PortoController::class, 'kerjaPraktek'])
+    ->name('services.kerja-praktek');
+
+Route::get('/custom-web', [PortoController::class, 'customWeb'])
+    ->name('services.custom-web');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth'])
     ->name('dashboard');

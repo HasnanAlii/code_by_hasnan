@@ -21,6 +21,21 @@ public function welcome(Request $request)
    return view('welcome', compact('projek'));
 }
 
+public function skripsi()
+{
+  return view('skripsi');
+}
+
+public function kerjaPraktek()
+{
+  return view('kerjapraktek');
+}
+
+public function customWeb()
+{
+  return view('customweb');
+}
+
     public function stats()
     {
         return Cache::remember('github_stats', 3600, function () {
