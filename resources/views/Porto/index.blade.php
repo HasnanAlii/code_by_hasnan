@@ -456,7 +456,7 @@
                           2022 - 2026
                         </span>
                          <span class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-medium">
-                         GPA 3,5
+                         GPA 3,44
                         </span>
                     </div>
 

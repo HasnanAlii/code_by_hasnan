@@ -94,12 +94,12 @@
             <div class="flex justify-between items-center h-20">
 
                 {{-- Logo --}}
-                <a href="#" class="flex items-center gap-3 group">
+                <a href="#" class="flex items-center gap-2 md:gap-3 group shrink min-w-0 pr-2 md:flex-1">
                     <div
-                        class="w-14 flex rounded-md items-center justify-center text-white font-bold text-lg shadow-blue-500/30 group-hover:scale-105 transition duration-300">
-                        <img src="{{ asset('images/logo.png') }}" alt="CodeByHasnan Logo">
+                        class="w-10 h-10 md:w-14 md:h-14 flex shrink-0 rounded-md items-center justify-center text-white font-bold text-lg shadow-blue-500/30 group-hover:scale-105 transition duration-300">
+                        <img src="{{ asset('images/logo.png') }}" class="w-full h-full object-contain" alt="CodeByHasnan Logo">
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-slate-900">CodeByHasnan</span>
+                    <span class="font-bold text-[17px] md:text-xl tracking-tight text-slate-900 truncate">CodeByHasnan</span>
                 </a>
 
                 {{-- Desktop Menu --}}
@@ -108,14 +108,14 @@
                         class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Tentang</a>
                     <a href="#layanan"
                         class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Layanan</a>
-                    <a href="#portfolio"
+                    <a href="/portofolio" target="_blank"
                         class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Portofolio</a>
                     <a href="#kontak"
                         class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Kontak</a>
                 </div>
 
                 {{-- CTA Button --}}
-                <div class="hidden md:flex items-center gap-3">
+                <div class="hidden md:flex items-center gap-3 shrink-0 md:flex-1 md:justify-end">
                     <a href="#kontak"
                         class="px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">Konsultasi</a>
                 </div>
@@ -137,11 +137,13 @@
                 class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Tentang</a>
             <a href="#layanan"
                 class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Layanan</a>
-            <a href="#portfolio"
+            <a href="/portofolio" target="_blank"
                 class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Portofolio</a>
             <a href="#kontak" class="block px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Kontak</a>
         </div>
     </nav>
+
+    <main class="relative w-full overflow-hidden">
 
     {{-- ================= HERO SECTION ================= --}}
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -171,7 +173,7 @@
                 {{-- Buttons --}}
                 <div data-aos="fade-up" data-aos-delay="300"
                     class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                    <a href="#layanan"
+                    <a href="#kontak"
                         class="group w-full sm:w-auto px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-blue-600 hover:shadow-[0_20px_40px_rgba(37,99,235,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -1036,7 +1038,7 @@
                 Konsultasi gratis. Ceritakan kebutuhan sistem Anda, dan saya akan memberikan solusi teknis terbaik.
             </p>
             <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/6285724945467" target="_blank"
+                <a href="https://wa.me/+6283163655478" target="_blank"
                     class="px-8 py-4 bg-white text-blue-700 font-bold rounded-full hover:bg-slate-100 hover:-translate-y-1 transition-all shadow-xl flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -1078,6 +1080,7 @@
             </div>
         </div>
     </footer>
+    </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

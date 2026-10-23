@@ -232,7 +232,7 @@
         'Kirim studi kasus, nama instansi, atau gambaran modul yang dibutuhkan. Saya bantu susun solusi yang ringkas, profesional, dan relevan untuk laporan KP Anda.';
     $footerTagline = 'Project kerja praktek yang fokus pada hasil demo dan presentasi.';
     $footerSubline = 'Ideal untuk magang, KP kampus, dan project instansi skala ringan.';
-    $heroImage = 'https://illustrations.popsy.co/teal/freelancer.svg';
+    $heroImage = asset('images/kerjapraktek-teal-hero.png');
 @endphp
 
 @include('partials.service-detail', get_defined_vars())

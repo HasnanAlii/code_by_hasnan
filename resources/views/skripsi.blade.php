@@ -232,7 +232,7 @@
         'Kirim judul atau gambaran fitur yang Anda butuhkan. Saya bantu petakan solusi yang realistis, rapi, dan siap dipresentasikan.';
     $footerTagline = 'Pendampingan sistem skripsi yang rapi dan siap presentasi.';
     $footerSubline = 'Cocok untuk kebutuhan seminar, revisi, dan final sidang.';
-    $heroImage = 'https://illustrations.popsy.co/blue/studying.svg';
+    $heroImage = asset('images/skripsi-hero.png');
 @endphp
 
 @include('partials.service-detail', get_defined_vars())
